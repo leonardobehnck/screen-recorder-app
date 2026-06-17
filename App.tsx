@@ -12,9 +12,6 @@ import CameraComponent from "./src/components/CameraView";
 export default function App() {
   const cameraRef = useRef<CameraView>(null);
   const [isRecording, setIsRecording] = useState(false);
-  const [recordedVideo, setRecordedVideo] = useState<{ uri: string } | null>(
-    null,
-  );
   const [video, setVideo] = useState<any>(null);
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
   const [hasMicrophonePermission, setHasMicrophonePermission] = useState(false);
