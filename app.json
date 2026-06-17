@@ -7,7 +7,8 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.screenrecorderapp"
     },
     "android": {
       "adaptiveIcon": {
@@ -16,11 +17,31 @@
         "backgroundImage": "./assets/icon.png",
         "monochromeImage": "./assets/icon.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.screenrecorderapp"
     },
     "web": {
       "favicon": "./assets/icon.png"
     },
-    "plugins": ["expo-sharing"]
+    "plugins": [
+      "expo-sharing",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permitir acesso à câmera para gravar vídeos.",
+          "microphonePermission": "Permitir acesso ao microfone para gravar áudio.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Permitir acesso às fotos para salvar gravações.",
+          "savePhotosPermission": "Permitir salvar gravações na galeria.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      "expo-video"
+    ]
   }
 }
